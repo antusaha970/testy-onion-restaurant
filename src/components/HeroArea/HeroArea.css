@@ -1,0 +1,25 @@
+.hero-container{
+    width: 100%;
+    background-image: url('../../images/bannerbackground.png');
+    height: 500px;
+    background-size: contain;
+    background-color: #FCF4E0;
+}
+
+.food-inp{
+    border: none;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+input[type="submit"] {
+    margin-left: -25px;
+}
+input:focus{
+    outline: none;
+}
+
+@media screen and (max-width:425px) {
+    .hero-container{
+        height: 300px;
+    }
+}
