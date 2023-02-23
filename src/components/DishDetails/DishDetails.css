@@ -1,0 +1,50 @@
+.details-size{
+    width: 100%;
+    height: auto;
+}
+
+.dish-title{
+    font-weight: 700;
+    font-size: 60px;
+}
+
+@media screen and (max-width:425px) {
+    .dish-title{
+        font-size: 45px;
+    }
+}
+
+.dish-description{
+    font-size: 16px;
+}
+
+.dish-price-2{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.counter p{
+    padding: 15px;
+}
+
+.inpCounter{
+    width: 100px;
+    height: 40px;
+    border: none;
+    background: #dfdfdf;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.counterSign{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #a6ff83;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+

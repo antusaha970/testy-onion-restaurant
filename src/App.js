@@ -7,6 +7,7 @@ import { useState, createContext } from 'react';
 import foodData from './fakeData';
 import ShowAllDish from './components/ShowAllDish/ShowAllDish';
 import './App.css';
+import DishDetails from './components/DishDetails/DishDetails';
 
 export const DishContext = createContext();
 
@@ -30,7 +31,11 @@ function App() {
       <MenuBar></MenuBar>
 
       <Routes>
+
         <Route path='/' element={<ShowAllDish currentDish={currentDish}></ShowAllDish>} />
+
+        <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
+
       </Routes>
     </DishContext.Provider>
   );
