@@ -4,10 +4,11 @@
     margin: 0 15px;
     font-size: 20px;
     font-weight: 700;
+    
 }
 
 .mnu-btn:hover{
-    border-bottom: 2px solid #F91944;
+    border-bottom: 1px solid #F91944;
 }
 
 .menuBar{

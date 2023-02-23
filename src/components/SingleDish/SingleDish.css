@@ -1,0 +1,28 @@
+.food-img {
+    height: 250px;
+    width: 250px;
+}
+
+.dish-name {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.dish-price {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.dish-container {
+    margin-bottom: 40px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.dish-container:hover {
+    -webkit-box-shadow: 2px 3.5px 12px 2px #dddddd;
+    -moz-box-shadow: 2px 3.5px 12px 2px #dddddd;
+    box-shadow: 2px 3.5px 12px 2px #dddddd;
+}

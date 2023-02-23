@@ -4,8 +4,10 @@ import './App.css';
 import HeroArea from './components/HeroArea/HeroArea';
 import { Routes } from 'react-router-dom';
 import MenuBar from './components/MenuBar/MenuBar';
-import { useState } from 'react';
+import { useState,createContext } from 'react';
 import foodData from './fakeData';
+
+export const DishContext = createContext();
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <DishContext.Provider value={[allItems,setAllItems]}>
 
       <NavArea></NavArea>
       <HeroArea></HeroArea>
@@ -28,7 +30,7 @@ function App() {
       <Routes>
 
       </Routes>
-    </div>
+    </DishContext.Provider>
   );
 }
 
