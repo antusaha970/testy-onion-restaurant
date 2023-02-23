@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { DishContext } from '../../App';
+import ShowAllDish from '../ShowAllDish/ShowAllDish';
 import SingleDish from '../SingleDish/SingleDish';
 import './MenuBar.css';
 
 const MenuBar = () => {
-    const [allItems, setAllItems] = useContext(DishContext);
-    const [currentDish, setCurrentDish] = useState([]);
+    const [allItems,setAllItems,currentDish, setCurrentDish] = useContext(DishContext);
+    
     useEffect(() => {
         const dishes = allItems.filter(dish => dish.category === 'lunch');
         setCurrentDish(dishes);
@@ -35,11 +36,6 @@ const MenuBar = () => {
                     <Link to='/'><button className='mnu-btn' onClick={handleClick}>Breakfast</button></Link>
                     <Link to='/'><button className='mnu-btn' onClick={handleClick}>Lunch</button></Link>
                     <Link to='/'><button className='mnu-btn' onClick={handleClick}>Dinner</button></Link>
-                </div>
-                <div className="row">
-                    {
-                        currentDish?.map(item => <SingleDish item={item} key={item.id}></SingleDish>)
-                    }
                 </div>
             </div>
         </Container>

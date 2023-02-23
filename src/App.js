@@ -1,19 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavArea from './components/NavArea/NavArea';
-import './App.css';
 import HeroArea from './components/HeroArea/HeroArea';
-import { Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import MenuBar from './components/MenuBar/MenuBar';
-import { useState,createContext } from 'react';
+import { useState, createContext } from 'react';
 import foodData from './fakeData';
+import ShowAllDish from './components/ShowAllDish/ShowAllDish';
+import './App.css';
 
 export const DishContext = createContext();
 
 
 function App() {
-  
+
   // console.log(breakfastImgs, lunchImgs, dinnerImgs);
   const [allItems, setAllItems] = useState(foodData);
+  const [currentDish, setCurrentDish] = useState([]);
 
   console.log(allItems);
 
@@ -21,14 +23,14 @@ function App() {
 
 
   return (
-    <DishContext.Provider value={[allItems,setAllItems]}>
+    <DishContext.Provider value={[allItems, setAllItems, currentDish, setCurrentDish]}>
 
       <NavArea></NavArea>
       <HeroArea></HeroArea>
       <MenuBar></MenuBar>
 
       <Routes>
-
+        <Route path='/' element={<ShowAllDish currentDish={currentDish}></ShowAllDish>} />
       </Routes>
     </DishContext.Provider>
   );

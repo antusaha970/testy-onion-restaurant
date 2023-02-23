@@ -6,11 +6,13 @@
 .dish-name {
     font-weight: 700;
     font-size: 20px;
+    color: #000;
 }
 
 .dish-price {
     font-weight: 700;
     font-size: 18px;
+    color: #000;
 }
 
 .dish-container {
@@ -25,4 +27,8 @@
     -webkit-box-shadow: 2px 3.5px 12px 2px #dddddd;
     -moz-box-shadow: 2px 3.5px 12px 2px #dddddd;
     box-shadow: 2px 3.5px 12px 2px #dddddd;
+}
+
+a{
+    text-decoration: none;
 }
