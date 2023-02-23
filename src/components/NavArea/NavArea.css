@@ -1,0 +1,17 @@
+.logo{
+    width: 80px;
+    height: 40px;
+}
+
+.custom-btn{
+    background: #F91944;
+    color: #fff;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+.btn:hover{
+    background: #fff;
+    color: black;
+}
