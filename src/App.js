@@ -8,6 +8,7 @@ import foodData from './fakeData';
 import ShowAllDish from './components/ShowAllDish/ShowAllDish';
 import './App.css';
 import DishDetails from './components/DishDetails/DishDetails';
+import CheckOutBtn from './components/CheckOutBtn/CheckOutBtn';
 
 export const DishContext = createContext();
 
@@ -36,8 +37,9 @@ function App() {
         <Route path='/' element={<ShowAllDish currentDish={currentDish}></ShowAllDish>} />
 
         <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
-
+        
       </Routes>
+      <CheckOutBtn></CheckOutBtn>
     </DishContext.Provider>
   );
 }
