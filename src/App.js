@@ -17,14 +17,15 @@ function App() {
   // console.log(breakfastImgs, lunchImgs, dinnerImgs);
   const [allItems, setAllItems] = useState(foodData);
   const [currentDish, setCurrentDish] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  console.log(allItems);
+  console.log(cart);
 
 
 
 
   return (
-    <DishContext.Provider value={[allItems, setAllItems, currentDish, setCurrentDish]}>
+    <DishContext.Provider value={[allItems, setAllItems, currentDish, setCurrentDish,cart, setCart]}>
 
       <NavArea></NavArea>
       <HeroArea></HeroArea>

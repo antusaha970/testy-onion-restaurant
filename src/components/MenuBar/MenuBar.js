@@ -13,7 +13,6 @@ const MenuBar = () => {
         const dishes = allItems.filter(dish => dish.category === 'lunch');
         setCurrentDish(dishes);
     }, [])
-    console.log(currentDish);
 
     const handleClick = (e) =>{
         if(e.target.innerText === 'Breakfast'){

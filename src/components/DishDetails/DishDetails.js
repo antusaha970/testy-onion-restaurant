@@ -6,7 +6,7 @@ import './DishDetails.css';
 
 const DishDetails = () => {
     const { id } = useParams();
-    const [allItems] = useContext(DishContext);
+    const [allItems, setAllItems, currentDish, setCurrentDish,cart, setCart] = useContext(DishContext);
 
     const handleCounterClick = (e) => {
         navigator.vibrate(100);
@@ -22,8 +22,19 @@ const DishDetails = () => {
             }
         }
     }
-
     const dish = allItems.find(dish => dish.id === parseInt(id));
+
+    const handleAddToCart = () =>{
+        if(Number(document.getElementById('counterInp').value) !== 0){
+            const quantity  = Number(document.getElementById('counterInp').value);
+            const newItem = {...dish, quantity: quantity};
+            setCart([...cart,newItem]);
+        }
+        else{
+            alert("Please add something to cart");
+        }
+    }
+
     return (
         <Container>
             <div className='row details-size justify-content-center'>
@@ -38,7 +49,7 @@ const DishDetails = () => {
                         <input type="number" id="counterInp" placeholder='Quantity' className='inpCounter'/>
                         <p onClick={handleCounterClick} className="counterSign">-</p>
                     </div>
-                    <button className='custom-btn'>Add To Cart</button>
+                    <button className='custom-btn' onClick={handleAddToCart}>Add To Cart</button>
                 </div>
                 <div className="col-md-6">
                     <img src={dish.img} alt="Dish" className='img-fluid' />
