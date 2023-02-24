@@ -11,6 +11,8 @@ import DishDetails from './components/DishDetails/DishDetails';
 import CheckOutBtn from './components/CheckOutBtn/CheckOutBtn';
 import Login from './components/Login/Login';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Checkout from './components/CheckOut/Checkout';
+import Blog from './components/Blog/Blog';
 
 export const DishContext = createContext();
 export const LoginContext = createContext();
@@ -43,7 +45,9 @@ function App() {
           <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
           <Route path='/login' element={<Login></Login>} />
           <Route  path='/place_order' element={<PlaceOrder></PlaceOrder>}/>
+          <Route path='/checkout' element={<Checkout></Checkout>} />
         </Routes>
+        <Blog></Blog>
         
       </LoginContext.Provider>
     </DishContext.Provider>

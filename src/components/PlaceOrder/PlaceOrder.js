@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import { DishContext } from '../../App';
 import CartItem from '../CartItem/CartItem';
 import './PlaceOrder.css';
@@ -10,11 +11,14 @@ const numberBeautify = (number) => {
 
 const PlaceOrder = () => {
     const [allItems, setAllItems, currentDish, setCurrentDish, cart, setCart] = useContext(DishContext);
+    const navigate = useNavigate();
     const handlePlaceOrder = (e) => {
+        navigate('/checkout');
         e.preventDefault();
+
     }
 
-    const subTotal = cart.reduce((sum, item) => ( sum + (Number(item.price)*item.quantity)), 0);
+    const subTotal = cart.reduce((sum, item) => (sum + (Number(item.price) * item.quantity)), 0);
     const tax = subTotal * 0.10;
     const fee = 5;
     const total = subTotal + tax + fee;
@@ -28,7 +32,7 @@ const PlaceOrder = () => {
             <div className="row my-5">
                 <div className="col-md-6 ">
                     <h3>Edit Delivery Details</h3>
-                    <form onClick={handlePlaceOrder}>
+                    <form onSubmit={handlePlaceOrder}>
                         <input className="input-field" type="text" name="address" id="UserName" placeholder="Address (*Required)" required />
                         <input className="input-field" type="text" name="address" id="UserName" placeholder="Full Address(Optional)" />
                         <input className="input-field" type="text" name="address" id="UserName" placeholder="Flat,suit or Floor(Optional)" />
@@ -48,22 +52,24 @@ const PlaceOrder = () => {
                             }
                             <div className="pricing">
                                 <table className='table'>
-                                    <tr>
-                                        <td>Subtotal : {cart.length} items</td>
-                                        <td>${numberBeautify(subTotal)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tax</td>
-                                        <td>${numberBeautify(tax)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Delivery Fee</td>
-                                        <td>${numberBeautify(fee)}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td>${numberBeautify(total)}</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Subtotal : {cart.length} items</td>
+                                            <td>${numberBeautify(subTotal)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tax</td>
+                                            <td>${numberBeautify(tax)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Delivery Fee</td>
+                                            <td>${numberBeautify(fee)}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total</td>
+                                            <td>${numberBeautify(total)}</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
