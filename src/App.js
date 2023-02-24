@@ -9,8 +9,10 @@ import ShowAllDish from './components/ShowAllDish/ShowAllDish';
 import './App.css';
 import DishDetails from './components/DishDetails/DishDetails';
 import CheckOutBtn from './components/CheckOutBtn/CheckOutBtn';
+import Login from './components/Login/Login';
 
 export const DishContext = createContext();
+export const LoginContext = createContext();
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
   const [allItems, setAllItems] = useState(foodData);
   const [currentDish, setCurrentDish] = useState([]);
   const [cart, setCart] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   console.log(cart);
 
@@ -26,19 +30,22 @@ function App() {
 
 
   return (
-    <DishContext.Provider value={[allItems, setAllItems, currentDish, setCurrentDish,cart, setCart]}>
+    <DishContext.Provider value={[allItems, setAllItems, currentDish, setCurrentDish, cart, setCart]}>
 
       <NavArea></NavArea>
       <HeroArea></HeroArea>
       <MenuBar></MenuBar>
+      <LoginContext.Provider value={[isLoggedIn, setIsLoggedIn]}>
 
-      <Routes>
+        <Routes>
 
-        <Route path='/' element={<ShowAllDish currentDish={currentDish}></ShowAllDish>} />
+          <Route path='/' element={<ShowAllDish currentDish={currentDish}></ShowAllDish>} />
 
-        <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
-        
-      </Routes>
+          <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
+          <Route path='/login' element={<Login></Login>} />
+
+        </Routes>
+      </LoginContext.Provider>
       <CheckOutBtn></CheckOutBtn>
     </DishContext.Provider>
   );
