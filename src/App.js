@@ -13,6 +13,7 @@ import Login from './components/Login/Login';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 import Checkout from './components/CheckOut/Checkout';
 import Blog from './components/Blog/Blog';
+import Footer from './components/Footer/Footer';
 
 export const DishContext = createContext();
 export const LoginContext = createContext();
@@ -48,6 +49,7 @@ function App() {
           <Route path='/checkout' element={<Checkout></Checkout>} />
         </Routes>
         <Blog></Blog>
+        <Footer></Footer>
         
       </LoginContext.Provider>
     </DishContext.Provider>

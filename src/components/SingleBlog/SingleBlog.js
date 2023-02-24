@@ -5,7 +5,7 @@ function SingleBlog({ blog }) {
     const { img, title, description } = blog;
 
     return (
-        <div className='col-md-4'>
+        <div className='col-md-4 mb-3'>
             <Card style={{  }}>
                 <Card.Img variant="top" src={img} />
                 <Card.Body>

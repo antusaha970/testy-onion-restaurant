@@ -15,8 +15,8 @@ function NavArea() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            <Nav.Link href="#home" className='fw-bold pe-4'>Login</Nav.Link>
-            <Nav.Link href="#link">
+            <Nav.Link className='fw-bold pe-4'>Login</Nav.Link>
+            <Nav.Link>
                 <Button className='custom-btn'>Sign up</Button>
             </Nav.Link>
           </Nav>
