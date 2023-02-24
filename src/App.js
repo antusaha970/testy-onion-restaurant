@@ -10,6 +10,7 @@ import './App.css';
 import DishDetails from './components/DishDetails/DishDetails';
 import CheckOutBtn from './components/CheckOutBtn/CheckOutBtn';
 import Login from './components/Login/Login';
+import PlaceOrder from './components/PlaceOrder/PlaceOrder';
 
 export const DishContext = createContext();
 export const LoginContext = createContext();
@@ -43,10 +44,10 @@ function App() {
 
           <Route path='/dish/:id' element={<DishDetails></DishDetails>} />
           <Route path='/login' element={<Login></Login>} />
-
+          <Route  path='/place_order' element={<PlaceOrder></PlaceOrder>}/>
         </Routes>
+        <CheckOutBtn></CheckOutBtn>
       </LoginContext.Provider>
-      <CheckOutBtn></CheckOutBtn>
     </DishContext.Provider>
   );
 }

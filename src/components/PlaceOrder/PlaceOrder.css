@@ -1,0 +1,12 @@
+.top-text p{
+    margin-bottom: 5px;
+}
+
+.table{
+    width: 50%;
+    font-size: 18px;
+}
+
+.table tr{
+    padding-bottom: 15px;
+}

@@ -37,7 +37,7 @@ function Login() {
                         // Signed in 
                         setIsLoggedIn(true);
                         navigator.vibrate(100);
-                        navigate('/place_oder');
+                        navigate('/place_order');
                         // ...
                     })
                     .catch((error) => {
@@ -59,7 +59,7 @@ function Login() {
                     .then((userCredential) => {
                         setIsLoggedIn(true);
                         navigator.vibrate(100);
-                        navigate('/place_oder');
+                        navigate('/place_order');
 
                         // ...
                     })
@@ -77,7 +77,9 @@ function Login() {
         <Container>
             <div className="form-container">
                 <form onSubmit={handleFormSubmit}>
-                    {!alreadyMember && <input className="input-field" type="text" name="name" id="UserName" placeholder="Name" />}
+                    {
+                    !alreadyMember && <input className="input-field" type="text" name="name" id="UserName" placeholder="Name" />
+                    }
                     <input className="input-field" type="email" name="email" id="UserEmail" placeholder="Email" />
                     <input className="input-field" type="password" name="password" id="UserPass" placeholder="Password" />
                     {!alreadyMember && <input className="input-field" type="password" name="confirm_password" id="PassConfirm" placeholder="Confirm Password" />}
