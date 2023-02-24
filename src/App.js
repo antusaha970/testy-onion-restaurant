@@ -25,8 +25,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
-  console.log(cart);
-
 
 
 
@@ -46,7 +44,7 @@ function App() {
           <Route path='/login' element={<Login></Login>} />
           <Route  path='/place_order' element={<PlaceOrder></PlaceOrder>}/>
         </Routes>
-        <CheckOutBtn></CheckOutBtn>
+        
       </LoginContext.Provider>
     </DishContext.Provider>
   );

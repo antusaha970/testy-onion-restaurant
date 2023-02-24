@@ -7,11 +7,11 @@ const CartItem = ({item}) => {
     return (
         <div className='cart-item-container'>
            <div className="row">
-            <div className="col-md-6 d-flex justify-content-center">
+            <div className="box d-flex justify-content-center">
                 <img src={img} alt="cart food" className='cart-img'/>
 
             </div>
-            <div className="col-md-6">
+            <div className="box">
                 <p className='cart-item-name'>{name}</p>
                 <p className='cart-item-price'>${price}</p>
                 <small>Quantity : {quantity}X</small>

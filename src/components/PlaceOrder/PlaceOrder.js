@@ -25,7 +25,7 @@ const PlaceOrder = () => {
 
     return (
         <Container>
-            <div className="row">
+            <div className="row my-5">
                 <div className="col-md-6 ">
                     <h3>Edit Delivery Details</h3>
                     <form onClick={handlePlaceOrder}>

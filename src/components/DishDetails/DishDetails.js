@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { DishContext } from '../../App';
+import CheckOutBtn from '../CheckOutBtn/CheckOutBtn';
 import './DishDetails.css';
 
 const DishDetails = () => {
@@ -55,6 +56,7 @@ const DishDetails = () => {
                     <img src={dish.img} alt="Dish" className='img-fluid' />
                 </div>
             </div>
+            <CheckOutBtn></CheckOutBtn>
         </Container>
     );
 };
